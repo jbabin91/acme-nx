@@ -13,6 +13,7 @@
     "lint": "nx run-many -t lint",
     "lint:fix": "pnpm lint --fix",
     "open:web": "fly open --config ./apps/web/fly.toml",
+    "prepare": "is-ci || husky install",
     "test": "nx test web"
   },
   "dependencies": {
@@ -53,6 +54,8 @@
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-sort-keys-fix": "^1.1.2",
     "eslint-plugin-unicorn": "^48.0.1",
+    "husky": "^8.0.3",
+    "is-ci": "^3.0.1",
     "jsdom": "~22.1.0",
     "nx": "16.6.0",
     "nx-cloud": "16.2.0",
