@@ -14,7 +14,7 @@ runs:
 
     - name: Get PNPM cache
       id: pnpm-cache
-      shell: base
+      shell: bash
       run: |
         echo "pnpm_cache_dir=$(pnpm store path)" >> $GITHUB_OUTPUT
 

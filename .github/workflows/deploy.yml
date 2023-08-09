@@ -26,10 +26,8 @@ jobs:
       - name: 📥 Download deps
         uses: ./.github/actions/pnpm-setup
 
-      - name: 🔬 Lint
-        run: |
-          pnpm format:check
-          pnpm nx run-many --target=lint,build --all --parallel --maxParallel=4
+      - name: 🔬 Branch Checks
+        uses: ./.github/actions/branch-checks
 
   # typecheck:
   #   name: ʦ TypeScript
