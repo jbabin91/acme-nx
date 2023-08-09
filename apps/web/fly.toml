@@ -2,7 +2,6 @@
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
-
 app = "late-wind-4739"
 primary_region = "phx"
 kill_signal = "SIGINT"
@@ -11,6 +10,7 @@ kill_timeout = 5
 [env]
 
 [experimental]
+  allowed_public_ports = []
   auto_rollback = true
 
 [[services]]

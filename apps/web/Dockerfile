@@ -10,7 +10,6 @@ LABEL fly_launch_runtime="NodeJS"
 WORKDIR /app
 
 # Set production environment
-# ENV NODE_ENV=production
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 
@@ -38,25 +37,12 @@ COPY --link . .
 # Build application
 RUN pnpm build
 
-# Remove development dependencies
-# RUN npm prune --production
-# RUN pnpm prune --prod
-
-# Final stage for app image
-# FROM base
-
-# Copy built application
-# COPY --from=build /app /app
-
-# Start the server by default, this can be overwritten at runtime
-# CMD [ "npm", "run", "start" ]
-
 # Final stage for app image
 FROM nginx
 
 # Copy nginx config
 # COPY ./nginx/nginx.conf /etc/nginx/conf.d/default.conf
-COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
+COPY ./apps/web/nginx/nginx.conf /etc/nginx/nginx.conf
 
 # Copy built application
 COPY --from=build /app/dist/apps/web /usr/share/nginx/html

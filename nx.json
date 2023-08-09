@@ -1,31 +1,20 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "nx-cloud",
-      "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"],
-        "accessToken": "NDI3MzU3NWQtNTUwOC00NGQxLWFhMmYtZjk5NTMyODNiOWIxfHJlYWQtd3JpdGU="
+  "generators": {
+    "@nx/react": {
+      "application": {
+        "babel": true,
+        "bundler": "vite",
+        "linter": "eslint",
+        "style": "css"
+      },
+      "component": {
+        "style": "css"
+      },
+      "library": {
+        "linter": "eslint",
+        "style": "css"
       }
-    }
-  },
-  "targetDefaults": {
-    "build": {
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
-    },
-    "e2e": {
-      "inputs": ["default", "^production"]
-    },
-    "test": {
-      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
-    },
-    "lint": {
-      "inputs": [
-        "default",
-        "{workspaceRoot}/.eslintrc.json",
-        "{workspaceRoot}/.eslintignore"
-      ]
     }
   },
   "namedInputs": {
@@ -41,21 +30,32 @@
     ],
     "sharedGlobals": []
   },
-  "generators": {
-    "@nx/react": {
-      "application": {
-        "style": "css",
-        "linter": "eslint",
-        "bundler": "vite",
-        "babel": true
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
+    },
+    "e2e": {
+      "inputs": ["default", "^production"]
+    },
+    "lint": {
+      "inputs": [
+        "default",
+        "{workspaceRoot}/.eslintrc.json",
+        "{workspaceRoot}/.eslintignore"
+      ]
+    },
+    "test": {
+      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
+    }
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "options": {
+        "accessToken": "NDI3MzU3NWQtNTUwOC00NGQxLWFhMmYtZjk5NTMyODNiOWIxfHJlYWQtd3JpdGU=",
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
       },
-      "component": {
-        "style": "css"
-      },
-      "library": {
-        "style": "css",
-        "linter": "eslint"
-      }
+      "runner": "nx-cloud"
     }
   }
 }

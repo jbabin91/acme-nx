@@ -5,6 +5,6 @@ services:
     image: acme/web
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: apps/web/Dockerfile
     ports:
       - '4300:80'
