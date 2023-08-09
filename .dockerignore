@@ -1,0 +1,14 @@
+# Folders
+.git
+.vscode
+dist
+node_modules
+tools
+
+# Files
+.dockerignore
+.prettierignore
+.prettierrc
+Dockerfile
+fly.toml
+README.md
