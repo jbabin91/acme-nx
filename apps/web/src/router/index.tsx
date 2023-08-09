@@ -1,56 +1,14 @@
-import { Link, Outlet, RootRoute, Route, Router } from '@tanstack/react-router';
-import { TanStackRouterDevtools } from '@tanstack/router-devtools';
+import { RootRoute, Router } from '@tanstack/react-router';
 
-import { ModeToggle } from '../components/mode-toggle';
-import { Button } from '../components/ui/button';
+import { aboutRoute } from '../modules/About';
+import { homeRoute } from '../modules/Home';
+import { Layout } from '../shared';
 
-const rootRoute = new RootRoute({
-  component: () => (
-    <div className="m-2 min-h-full">
-      <div className="flex justify-between p-1">
-        <div className="flex gap-2">
-          <Link to="/">
-            <Button variant="link">Home</Button>
-          </Link>
-          <Link to="/about">
-            <Button variant="link">About</Button>
-          </Link>
-        </div>
-        <ModeToggle />
-      </div>
-      <hr />
-      <div className="mx-10 mt-5">
-        <Outlet />
-      </div>
-      <TanStackRouterDevtools />
-    </div>
-  ),
+export const rootRoute = new RootRoute({
+  component: Layout,
 });
 
-const indexRoute = new Route({
-  component: function Index() {
-    return (
-      <div className="flex flex-col gap-3">
-        <h3>Welcome Home!</h3>
-        <div>
-          <Button onClick={() => alert('Hello world')}>Click me</Button>
-        </div>
-      </div>
-    );
-  },
-  getParentRoute: () => rootRoute,
-  path: '/',
-});
-
-const aboutRoute = new Route({
-  component: function About() {
-    return <div>Hello from About!</div>;
-  },
-  getParentRoute: () => rootRoute,
-  path: '/about',
-});
-
-const routeTree = rootRoute.addChildren([indexRoute, aboutRoute]);
+const routeTree = rootRoute.addChildren([homeRoute, aboutRoute]);
 
 export const router = new Router({ routeTree });
 

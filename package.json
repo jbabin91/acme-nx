@@ -14,6 +14,7 @@
     "lint:fix": "pnpm lint --fix",
     "open:web": "fly open --config ./apps/web/fly.toml",
     "prepare": "is-ci || husky install",
+    "preview": "nx preview web",
     "test": "nx test web"
   },
   "dependencies": {
