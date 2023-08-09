@@ -132,7 +132,7 @@ jobs:
       #     mv ./other/Dockerfile ./Dockerfile
       #     mv ./other/.dockerignore ./.dockerignore
 
-      - name: 🚀 Deploy Staging
+      - name: 🚀 Deploy Dev
         if: ${{ github.ref == 'refs/heads/dev' }}
         uses: superfly/flyctl-actions@1.4
         with:

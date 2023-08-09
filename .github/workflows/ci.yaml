@@ -1,0 +1,20 @@
+name: CI
+
+on:
+  push:
+    branches-ignore:
+      - dev
+      - main
+
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v3
+
+      - name: 📥 Download deps
+        uses: ./.github/actions/pnpm-setup
+
+      - name: 🔬 Branch Checks
+        uses: ./.github/actions/branch-checks
