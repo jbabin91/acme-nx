@@ -1,5 +1,5 @@
 import { Link, Outlet, RootRoute, Route, Router } from '@tanstack/react-router';
-import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
+import { TanStackRouterDevtools } from '@tanstack/router-devtools';
 
 const rootRoute = new RootRoute({
   component: () => (

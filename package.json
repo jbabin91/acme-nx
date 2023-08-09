@@ -18,8 +18,8 @@
   },
   "dependencies": {
     "@swc/helpers": "~0.5.1",
-    "@tanstack/react-router": "0.0.1-beta.83",
-    "@tanstack/react-router-devtools": "0.0.1-beta.83",
+    "@tanstack/react-router": "0.0.1-beta.145",
+    "@tanstack/router-devtools": "0.0.1-beta.145",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tslib": "^2.6.1"

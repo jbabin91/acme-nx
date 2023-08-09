@@ -9,11 +9,14 @@ dependencies:
     specifier: ~0.5.1
     version: 0.5.1
   '@tanstack/react-router':
-    specifier: 0.0.1-beta.83
-    version: 0.0.1-beta.83(react-dom@18.2.0)(react@18.2.0)
+    specifier: 0.0.1-beta.145
+    version: 0.0.1-beta.145(react-dom@18.2.0)(react@18.2.0)
   '@tanstack/react-router-devtools':
     specifier: 0.0.1-beta.83
     version: 0.0.1-beta.83(react-dom@18.2.0)(react@18.2.0)
+  '@tanstack/router-devtools':
+    specifier: 0.0.1-beta.145
+    version: 0.0.1-beta.145(react-dom@18.2.0)(react@18.2.0)
   react:
     specifier: 18.2.0
     version: 18.2.0
@@ -1789,6 +1792,14 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
+  /@gisatcz/cross-package-react-context@0.2.0(react@18.2.0):
+    resolution: {integrity: sha512-E7aR/o1ArpXETO8bQi+Hltj3duHeZiLjR+x1VZrCDs3jplSLGoy+oqCcqNNE1BamTBa0YQTs8Go1Q1dtt3LEUg==}
+    peerDependencies:
+      react: ^16.13.1 || ^17.0.2 || ^18.1.0
+    dependencies:
+      react: 18.2.0
+    dev: false
+
   /@humanwhocodes/config-array@0.11.10:
     resolution: {integrity: sha512-KVVjQmNUepDVGXNuoRRdmmEjruj0KfiGSbS8LVc12LMsWDQzRXJ0qdhN8L8uUigKpfEHRhlaQFY0ib1tnUbNeQ==}
     engines: {node: '>=10.10.0'}
@@ -2768,6 +2779,23 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
+  /@tanstack/react-router@0.0.1-beta.145(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-RXU8Wy2GDvg+EoTSx/lhROFAhn56x/qJMGEE1r/eFAj3krvQFSerJu74vqETcx8qftJ3X0qEhnG/YVRq9Eje9w==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      react: '>=16'
+      react-dom: '>=16'
+    dependencies:
+      '@babel/runtime': 7.22.10
+      '@gisatcz/cross-package-react-context': 0.2.0(react@18.2.0)
+      '@tanstack/react-store': 0.0.1-beta.134(react-dom@18.2.0)(react@18.2.0)
+      '@tanstack/router-core': 0.0.1-beta.145(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      tiny-invariant: 1.3.1
+      tiny-warning: 1.0.3
+    dev: false
+
   /@tanstack/react-router@0.0.1-beta.83(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-FcezDPKxXu7uP8tjTQpKBXkweiql053O7D3hRBg1kWuU3LyouHFGFALLr2xvWkue4WWSpa1mBzrINldYygDKLw==}
     engines: {node: '>=12'}
@@ -2780,6 +2808,19 @@ packages:
       '@tanstack/router': 0.0.1-beta.83
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /@tanstack/react-store@0.0.1-beta.134(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-sdd78TYYp2uye6QTRMCafREkummomQPILI8egKgquu3/Cww/QbEIu+BVAssWw5At94j7ZXpVEyHGHXt0Iyuliw==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      react: '>=16'
+      react-dom: '>=16'
+    dependencies:
+      '@tanstack/store': 0.0.1-beta.134
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false
 
   /@tanstack/react-store@0.0.1-beta.81(react-dom@18.2.0)(react@18.2.0):
@@ -2795,6 +2836,36 @@ packages:
       use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false
 
+  /@tanstack/router-core@0.0.1-beta.145(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-PS+Obc8bvH0wggS6umD8Z9W6ZJOmuSGU1TUqt5IUqIFegvHA+f9CEWy/63xdIM73hQ9AdBY6nr71BFPjAsfPLQ==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      react: '>=16'
+      react-dom: '>=16'
+    dependencies:
+      '@babel/runtime': 7.22.10
+      '@gisatcz/cross-package-react-context': 0.2.0(react@18.2.0)
+      '@tanstack/react-store': 0.0.1-beta.134(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      tiny-invariant: 1.3.1
+      tiny-warning: 1.0.3
+    dev: false
+
+  /@tanstack/router-devtools@0.0.1-beta.145(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-TXPxT/8Yepq3upNqg0GPbavy+ONokAxLnH5b9HRHR6y8KqQwQpcid5B/wBD1g8yMJOrdIqTabZ7Nd/4G0bOOJQ==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      react: '>=16'
+      react-dom: '>=16'
+    dependencies:
+      '@babel/runtime': 7.22.10
+      '@tanstack/react-router': 0.0.1-beta.145(react-dom@18.2.0)(react@18.2.0)
+      date-fns: 2.30.0
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
   /@tanstack/router@0.0.1-beta.83:
     resolution: {integrity: sha512-cwkfyvgg7g60wbKZBRl1sbut+eYyE6bPc/Efz2ozFD//oV6qBUftoRm4PbN5cdPgrHjjLOFuOKW43EEUXM/exQ==}
     engines: {node: '>=12'}
@@ -2803,6 +2874,11 @@ packages:
       '@tanstack/store': 0.0.1-beta.81
       tiny-invariant: 1.3.1
       tiny-warning: 1.0.3
+    dev: false
+
+  /@tanstack/store@0.0.1-beta.134:
+    resolution: {integrity: sha512-eU+4D+7K3c17xJvMGZwrdGdlXe7fgFR5vpPv4NGZjupv848KFdLHD6Ybi8VhQCLfig7xTEkTNiveiN601GBbmw==}
+    engines: {node: '>=12'}
     dev: false
 
   /@tanstack/store@0.0.1-beta.81:
