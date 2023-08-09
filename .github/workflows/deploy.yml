@@ -138,7 +138,7 @@ jobs:
         with:
           args:
             'deploy --config ./apps/web/fly.toml --dockerfile ./apps/web/Dockerfile --remote-only --build-arg COMMIT_SHA=${{ github.sha }} --app
-            ${{ steps.app_name.outputs.value }}-staging'
+            ${{ steps.app_name.outputs.value }}-dev'
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 
